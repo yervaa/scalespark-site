@@ -22,10 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        <div className="min-h-screen bg-black text-white">
-          <header className="border-b border-zinc-900">
-            <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-10">
+      <body className="antialiased bg-black text-white">
+        <div className="min-h-screen">
+          <header className="border-b border-white/10 bg-black/70 backdrop-blur">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
               <Link href="/" className="flex items-center gap-3">
                 <img
                   src="/logo.png"
@@ -34,12 +34,12 @@ export default function RootLayout({
                 />
                 <span className="text-lg font-semibold tracking-tight">ScaleSpark</span>
               </Link>
-              <nav className="flex items-center gap-6 text-sm font-medium text-zinc-200">
+              <nav className="flex items-center gap-3 text-sm font-medium text-zinc-200">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-full px-3 py-1 transition hover:bg-white hover:text-black"
+                    className="rounded-full px-3 py-2 transition hover:bg-white hover:text-black"
                   >
                     {item.label}
                   </Link>
@@ -48,11 +48,13 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="mx-auto w-full max-w-5xl px-6 sm:px-10">{children}</main>
+          <main className="mx-auto w-full max-w-6xl px-6 pb-16 pt-12 sm:px-10 sm:pb-24 sm:pt-16">
+            {children}
+          </main>
 
-          <footer className="border-t border-zinc-900 bg-black py-8">
-            <div className="mx-auto flex max-w-5xl flex-col gap-3 px-6 sm:flex-row sm:items-center sm:justify-between sm:px-10">
-              <p className="text-sm text-zinc-400">© {new Date().getFullYear()} ScaleSpark</p>
+          <footer className="border-t border-white/10 bg-black py-8">
+            <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 sm:flex-row sm:items-center sm:justify-between sm:px-10">
+              <p className="text-sm text-zinc-500">© {new Date().getFullYear()} ScaleSpark. All rights reserved.</p>
               <a
                 href="mailto:scalesparkoutreach@gmail.com"
                 className="text-sm font-medium underline decoration-white/40 underline-offset-4 hover:decoration-white"

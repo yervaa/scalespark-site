@@ -17,25 +17,23 @@ const servicePreview = [
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-16 pb-20 pt-16">
-      <section className="flex flex-col gap-8">
+    <div className="flex flex-col gap-16">
+      <section className="flex flex-col gap-10 rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-10">
         <div className="flex flex-col gap-5">
-          <p className="text-sm uppercase tracking-[0.35em] text-zinc-400">ScaleSpark</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-zinc-400">ScaleSpark</p>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-          Innovative solutions that help businesses grow faster.
+            We build modern marketing systems so brands scale faster.
           </h1>
           <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">
-            ScaleSpark’s goal is to help businesses grow faster by delivering innovative solutions that spark progress.
-            Our number one goal is to turn clients’ ideas into real success—with clean execution across content, video,
-            and web.
+            ScaleSpark turns bold ideas into measurable growth through clear positioning, disciplined creative, and
+            precise execution across social, video, and web. Every touchpoint is built to spark progress.
           </p>
-
         </div>
 
         <div className="flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:shadow-lg"
+            className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-15px_rgba(255,255,255,0.6)]"
           >
             Contact Us
           </Link>
@@ -43,13 +41,13 @@ export default function HomePage() {
             href="/services"
             className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/50"
           >
-            Services
+            View Services
           </Link>
           <Link
             href="/about"
             className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/50"
           >
-            About
+            About ScaleSpark
           </Link>
         </div>
       </section>
@@ -61,13 +59,16 @@ export default function HomePage() {
             View all
           </Link>
         </div>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid auto-rows-fr gap-4 sm:grid-cols-3">
           {servicePreview.map((service) => (
             <div
               key={service.title}
-              className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5"
+              className="group flex h-full flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-white/25"
             >
-              <h3 className="text-lg font-semibold">{service.title}</h3>
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold">{service.title}</h3>
+                <span className="h-2 w-2 rounded-full bg-white/60 group-hover:bg-white" />
+              </div>
               <p className="text-sm text-zinc-300">{service.copy}</p>
             </div>
           ))}
