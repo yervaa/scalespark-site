@@ -1,65 +1,76 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+const servicePreview = [
+  {
+    title: "Social Media Posts",
+    copy: "Consistent, on-brand content that keeps your audience engaged and growing.",
+  },
+  {
+    title: "Professional Video Creations",
+    copy: "Crisp storytelling and editing designed to convert across every channel.",
+  },
+  {
+    title: "Website Creation / Optimization",
+    copy: "High-performing sites with clear messaging and smooth user flows.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col gap-16 pb-20 pt-16">
+      <section className="flex flex-col gap-8">
+        <div className="flex flex-col gap-5">
+          <p className="text-sm uppercase tracking-[0.35em] text-zinc-400">ScaleSpark</p>
+          <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
+            We build the modern marketing systems that help brands scale, faster.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">
+            ScaleSpark’s mission is to turn bold ideas into measurable growth through clarity, innovation, and precise
+            execution. We align strategy and creative so every touchpoint sparks progress.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/contact"
+            className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Contact Us
+          </Link>
+          <Link
+            href="/services"
+            className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/50"
           >
-            Documentation
-          </a>
+            Services
+          </Link>
+          <Link
+            href="/about"
+            className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/50"
+          >
+            About
+          </Link>
         </div>
-      </main>
+      </section>
+
+      <section className="flex flex-col gap-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-xl font-semibold">Services preview</h2>
+          <Link href="/services" className="text-sm font-medium text-zinc-300 underline underline-offset-4">
+            View all
+          </Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {servicePreview.map((service) => (
+            <div
+              key={service.title}
+              className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5"
+            >
+              <h3 className="text-lg font-semibold">{service.title}</h3>
+              <p className="text-sm text-zinc-300">{service.copy}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
