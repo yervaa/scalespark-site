@@ -22,18 +22,20 @@ export default function HomePage() {
         <div className="flex flex-col gap-5">
           <p className="text-sm uppercase tracking-[0.35em] text-zinc-400">ScaleSpark</p>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            We build the modern marketing systems that help brands scale, faster.
+          Innovative solutions that help businesses grow faster.
           </h1>
           <p className="max-w-3xl text-lg leading-relaxed text-zinc-300">
-            ScaleSpark’s mission is to turn bold ideas into measurable growth through clarity, innovation, and precise
-            execution. We align strategy and creative so every touchpoint sparks progress.
+            ScaleSpark’s goal is to help businesses grow faster by delivering innovative solutions that spark progress.
+            Our number one goal is to turn clients’ ideas into real success—with clean execution across content, video,
+            and web.
           </p>
+
         </div>
 
         <div className="flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5"
+            className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:shadow-lg"
           >
             Contact Us
           </Link>
